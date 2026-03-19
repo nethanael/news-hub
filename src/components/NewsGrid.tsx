@@ -1,27 +1,8 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
 import { Text } from "@chakra-ui/react";
-
-interface NewsArticle {
-  article_id: string;
-  title: string;
-}
-
-interface FetchNewsResponse {
-  count: number;
-  results: NewsArticle[];
-}
+import useNews from "../hooks/useNews";
 
 const NewsGrid = () => {
-  const [news, setNews] = useState<NewsArticle[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get<FetchNewsResponse>("/latest")
-      .then((res) => setNews(res.data.results))
-      .catch((err) => setError(err.message));
-  }, []);
+  const { news, error } = useNews();
 
   return (
     <>
