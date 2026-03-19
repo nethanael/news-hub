@@ -1,5 +1,6 @@
-import { Text } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import useNews from "../hooks/useNews";
+import ArticleCard from "./ArticleCard";
 
 const NewsGrid = () => {
   const { news, error } = useNews();
@@ -7,11 +8,15 @@ const NewsGrid = () => {
   return (
     <>
       {error && <Text>{error}</Text>}
-      <ul>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3, xl: 5 }}
+        spacing={10}
+        padding="10px"
+      >
         {news.map((article) => (
-          <li key={article.article_id}>{article.title}</li>
+          <ArticleCard key={article.article_id} newsArticle={article} />
         ))}
-      </ul>
+      </SimpleGrid>
     </>
   );
 };
