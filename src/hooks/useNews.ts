@@ -7,6 +7,7 @@ export interface NewsArticle {
   title: string;
   image_url: string;
   category: string[];
+  source_name: string
 }
 
 interface FetchNewsResponse {
