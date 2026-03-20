@@ -6,6 +6,7 @@ export interface NewsArticle {
   article_id: string;
   title: string;
   image_url: string;
+  category: string[];
 }
 
 interface FetchNewsResponse {
