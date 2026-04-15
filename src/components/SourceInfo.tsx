@@ -2,13 +2,13 @@ import { NewsArticle } from "../hooks/useNews";
 import { Badge } from "@chakra-ui/react";
 
 interface SourceInfoProps {
-  newsArticle: NewsArticle;
+  sourceInfo: string;
 }
 
-const SourceInfo = ({ newsArticle }: SourceInfoProps) => {
+const SourceInfo = ({ sourceInfo }: SourceInfoProps) => {
   return (
-    <Badge colorScheme="blue" fontSize="14px" padding={2} borderRadius="4px">
-      {newsArticle.source_name}
+    <Badge colorScheme="blue" fontSize="14px" padding={2} borderRadius="8px">
+      {sourceInfo}
     </Badge>
   );
 };

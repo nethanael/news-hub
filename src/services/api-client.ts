@@ -9,3 +9,7 @@ export default axios.create({
         language: "es"
     }
 });
+
+// News API To Search, Collect
+// And Track Worldwide News
+// Newsdata.io
