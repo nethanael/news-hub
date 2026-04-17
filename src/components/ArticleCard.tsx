@@ -9,7 +9,7 @@ interface ArticleCardProps {
 
 const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
   return (
-    <Card borderRadius={10} overflow="hidden">
+    <Card width="300px" borderRadius={10} overflow="hidden">
       <Image src={newsArticle.image_url} />
       <CardBody>
         <Heading fontSize="2xl">{newsArticle.title}</Heading>

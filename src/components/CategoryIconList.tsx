@@ -53,7 +53,7 @@ const CategoryIconList = ({ newsArticle }: IconProps) => {
   return (
     <HStack marginY={1}>
       {newsArticle.category.map((cat) => (
-        <Icon as={iconMap[cat]} color="gray.500" />
+        <Icon as={iconMap[cat]} color="gray.500" key={cat} />
       ))}
     </HStack>
   );

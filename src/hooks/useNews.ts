@@ -19,23 +19,29 @@ interface FetchNewsResponse {
 const useNews = () => {
   const [news, setNews] = useState<NewsArticle[]>([]);
   const [error, setError] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
 
+    setLoading(true);
     apiClient
       .get<FetchNewsResponse>("/latest", { signal: controller.signal})
-      .then((res) => setNews(res.data.results))
+      .then((res) => {
+        setNews(res.data.results);
+        setLoading(false);
+      })
       .catch((err) => {
         if (err instanceof CanceledError) return;
         setError(err.message);
+        setLoading(false);
       });
 
       return () => controller.abort();
 
   }, []);
 
-return {news, error};
+return {news, error, isLoading};
 
 }
 
