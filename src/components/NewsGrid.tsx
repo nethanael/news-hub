@@ -2,6 +2,7 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import useNews from "../hooks/useNews";
 import ArticleCard from "./ArticleCard";
 import ArticleCardSkeleton from "./ArticleCardSkeleton";
+import ArticleCardContainer from "./ArticleCardContainer";
 
 const NewsGrid = () => {
   const { news, error, isLoading } = useNews();
@@ -17,9 +18,15 @@ const NewsGrid = () => {
         padding="10px"
       >
         {isLoading &&
-          skeletons.map((skeleton) => <ArticleCardSkeleton key={skeleton} />)}
+          skeletons.map((skeleton) => (
+            <ArticleCardContainer>
+              <ArticleCardSkeleton key={skeleton} />
+            </ArticleCardContainer>
+          ))}
         {news.map((article) => (
-          <ArticleCard key={article.article_id} newsArticle={article} />
+          <ArticleCardContainer>
+            <ArticleCard key={article.article_id} newsArticle={article} />
+          </ArticleCardContainer>
         ))}
       </SimpleGrid>
     </>
