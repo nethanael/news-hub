@@ -1,4 +1,12 @@
-import { Card, CardBody, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  Heading,
+  HStack,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
 import { NewsArticle } from "../hooks/useNews";
 import CategoryIconList from "./CategoryIconList";
 import SourceInfo from "./SourceInfo";
@@ -17,6 +25,11 @@ const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
           <CategoryIconList newsArticle={newsArticle} />
           <SourceInfo sourceInfo={newsArticle.source_name} />
         </HStack>
+        <Text fontSize="xs">
+          <Link href={newsArticle.link} isExternal>
+            Ver más...
+          </Link>
+        </Text>
       </CardBody>
     </Card>
   );
