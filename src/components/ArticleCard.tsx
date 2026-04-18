@@ -27,14 +27,12 @@ const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
         </HStack>
         <Text fontSize="xs">
           <Link href={newsArticle.link} isExternal>
-            Ver más...
+            Leer más...
           </Link>
         </Text>
       </CardBody>
     </Card>
   );
 };
-
-interface ArticleCardProps {}
 
 export default ArticleCard;
