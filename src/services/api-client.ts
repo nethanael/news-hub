@@ -3,7 +3,7 @@ import axios from "axios";
 export default axios.create({
     baseURL: "https://newsdata.io/api/1",
     params: {
-        apikey: "pub_73f8b8f47d814d4eb7c100005d8cd3cf",
+        apikey: "pub_54a36066a97742b6a133adbd486163a0",
         country: "cr",
         //category: "health,business,technology,entertainment,top",
         language: "es"
