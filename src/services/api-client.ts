@@ -7,7 +7,6 @@ export default axios.create({
         country: "cr",
         //category: "health,business,technology,entertainment,top",
         language: "es",
-        image: 1
     }
 });
 
