@@ -5,7 +5,7 @@ import ArticleCardSkeleton from "./ArticleCardSkeleton";
 import ArticleCardContainer from "./ArticleCardContainer";
 
 const NewsGrid = () => {
-  const { news, error, isLoading } = useNews();
+  const { data, error, isLoading } = useNews();
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -23,7 +23,7 @@ const NewsGrid = () => {
               <ArticleCardSkeleton key={skeleton} />
             </ArticleCardContainer>
           ))}
-        {news.map((article) => (
+        {data.map((article) => (
           <ArticleCardContainer>
             <ArticleCard key={article.article_id} newsArticle={article} />
           </ArticleCardContainer>
