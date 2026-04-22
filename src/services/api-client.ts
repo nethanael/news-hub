@@ -6,7 +6,8 @@ export default axios.create({
         apikey: "pub_54a36066a97742b6a133adbd486163a0",
         country: "cr",
         //category: "health,business,technology,entertainment,top",
-        language: "es"
+        language: "es",
+        image: 1
     }
 });
 

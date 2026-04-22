@@ -7,6 +7,7 @@ export interface Source {
     id: string;
     name: string;
     url: string;
+    icon: string;
 }
 
 const useSources = () => useData<Source>("/sources");
