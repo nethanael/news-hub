@@ -4,12 +4,17 @@ import {
   List,
   ListIcon,
   ListItem,
+  Spinner,
   Text,
 } from "@chakra-ui/react";
 import useSources from "../hooks/useSources";
 
 const SourcesList = () => {
-  const { data } = useSources();
+  const { data, isLoading, error } = useSources();
+
+  if (error) return null;
+  if (isLoading) return <Spinner />;
+
   return (
     <List>
       {data.map((source) => (
