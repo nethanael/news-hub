@@ -1,4 +1,5 @@
 import useData from "./useData";
+import { Source } from "./useSources";
 
 export interface NewsArticle {
   article_id: string;
@@ -9,6 +10,6 @@ export interface NewsArticle {
   link: string;
 }
 
-const useNews = () => useData<NewsArticle>("/latest");
+const useNews = (selectedCategory: string) => useData<NewsArticle>("/latest", {params: {category: selectedCategory}}, [selectedCategory]);
 
 export default useNews;

@@ -1,12 +1,4 @@
-import {
-  HStack,
-  Image,
-  List,
-  ListIcon,
-  ListItem,
-  Spinner,
-  Text,
-} from "@chakra-ui/react";
+import { HStack, Image, List, ListItem, Spinner, Text } from "@chakra-ui/react";
 import useSources from "../hooks/useSources";
 
 const SourcesList = () => {
@@ -17,6 +9,7 @@ const SourcesList = () => {
 
   return (
     <List>
+      <Text fontSize="3xl">Fuentes:</Text>
       {data.map((source) => (
         <ListItem key={source.id} paddingY="5px">
           <HStack>

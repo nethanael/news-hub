@@ -3,9 +3,14 @@ import useNews from "../hooks/useNews";
 import ArticleCard from "./ArticleCard";
 import ArticleCardSkeleton from "./ArticleCardSkeleton";
 import ArticleCardContainer from "./ArticleCardContainer";
+import { Source } from "../hooks/useSources";
 
-const NewsGrid = () => {
-  const { data, error, isLoading } = useNews();
+interface NewsGridProps {
+  selectedCategory: string;
+}
+
+const NewsGrid = ({ selectedCategory }: NewsGridProps) => {
+  const { data, error, isLoading } = useNews(selectedCategory);
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -19,13 +24,13 @@ const NewsGrid = () => {
       >
         {isLoading &&
           skeletons.map((skeleton) => (
-            <ArticleCardContainer>
-              <ArticleCardSkeleton key={skeleton} />
+            <ArticleCardContainer key={skeleton}>
+              <ArticleCardSkeleton />
             </ArticleCardContainer>
           ))}
         {data.map((article) => (
-          <ArticleCardContainer>
-            <ArticleCard key={article.article_id} newsArticle={article} />
+          <ArticleCardContainer key={article.article_id}>
+            <ArticleCard newsArticle={article} />
           </ArticleCardContainer>
         ))}
       </SimpleGrid>
