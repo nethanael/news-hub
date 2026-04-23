@@ -1,5 +1,4 @@
 import useData from "./useData";
-import { Source } from "./useSources";
 
 export interface NewsArticle {
   article_id: string;
