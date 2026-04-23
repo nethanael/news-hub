@@ -1,9 +1,10 @@
-import { Grid, GridItem, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import NewsGrid from "./components/NewsGrid";
 import SourcesList from "./components/SourcesList";
 import { useState } from "react";
 import CategorySelector from "./components/CategorySelector";
+import SortSelector from "./components/SortSelector";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("top");
@@ -28,10 +29,13 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <CategorySelector
-          selectedCategory={selectedCategory}
-          onSelectCategory={(category) => setSelectedCategory(category)}
-        />
+        <HStack spacing={5} paddingLeft={3} marginBottom={3}>
+          <CategorySelector
+            selectedCategory={selectedCategory}
+            onSelectCategory={(category) => setSelectedCategory(category)}
+          />
+          <SortSelector />
+        </HStack>
         <NewsGrid selectedCategory={selectedCategory} />
       </GridItem>
     </Grid>
