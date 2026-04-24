@@ -8,6 +8,7 @@ import SortSelector from "./components/SortSelector";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("top");
+  const [selectedOrder, setSelectedOrder] = useState("Pubdateasc");
 
   return (
     <Grid
@@ -34,9 +35,15 @@ function App() {
             selectedCategory={selectedCategory}
             onSelectCategory={(category) => setSelectedCategory(category)}
           />
-          <SortSelector />
+          <SortSelector
+            selectedOrder={selectedOrder}
+            onSelectOrder={(order) => setSelectedOrder(order)}
+          />
         </HStack>
-        <NewsGrid selectedCategory={selectedCategory} />
+        <NewsGrid
+          selectedCategory={selectedCategory}
+          selectedOrder={selectedOrder}
+        />
       </GridItem>
     </Grid>
   );

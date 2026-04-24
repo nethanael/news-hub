@@ -3,14 +3,14 @@ import useNews from "../hooks/useNews";
 import ArticleCard from "./ArticleCard";
 import ArticleCardSkeleton from "./ArticleCardSkeleton";
 import ArticleCardContainer from "./ArticleCardContainer";
-import { Source } from "../hooks/useSources";
 
 interface NewsGridProps {
   selectedCategory: string;
+  selectedOrder: string;
 }
 
-const NewsGrid = ({ selectedCategory }: NewsGridProps) => {
-  const { data, error, isLoading } = useNews(selectedCategory);
+const NewsGrid = ({ selectedCategory, selectedOrder }: NewsGridProps) => {
+  const { data, error, isLoading } = useNews(selectedCategory, selectedOrder);
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
