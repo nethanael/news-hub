@@ -10,6 +10,7 @@ import {
 import { NewsArticle } from "../hooks/useNews";
 import CategoryIconList from "./CategoryIconList";
 import SourceInfo from "./SourceInfo";
+import noImage from "../assets/no-image-placeholder.webp";
 
 interface ArticleCardProps {
   newsArticle: NewsArticle;
@@ -18,7 +19,7 @@ interface ArticleCardProps {
 const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
   return (
     <Card>
-      <Image src={newsArticle.image_url} />
+      <Image src={newsArticle.image_url || noImage} />
       <CardBody>
         <Heading fontSize="2xl">{newsArticle.title}</Heading>
         <HStack justifyContent="space-between">
