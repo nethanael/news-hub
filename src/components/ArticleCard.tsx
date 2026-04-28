@@ -21,11 +21,11 @@ const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
     <Card>
       <Image src={newsArticle.image_url || noImage} />
       <CardBody>
-        <Heading fontSize="2xl">{newsArticle.title}</Heading>
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" marginBottom={3}>
           <CategoryIconList newsArticle={newsArticle} />
           <SourceInfo sourceInfo={newsArticle.source_name} />
         </HStack>
+        <Heading fontSize="2xl">{newsArticle.title}</Heading>
         <Text fontSize="xs">
           <Link href={newsArticle.link} isExternal>
             Ir a la noticia...
