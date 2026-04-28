@@ -7,10 +7,19 @@ import ArticleCardContainer from "./ArticleCardContainer";
 interface NewsGridProps {
   selectedCategory: string;
   selectedOrder: string;
+  searchText: string | null;
 }
 
-const NewsGrid = ({ selectedCategory, selectedOrder }: NewsGridProps) => {
-  const { data, error, isLoading } = useNews(selectedCategory, selectedOrder);
+const NewsGrid = ({
+  selectedCategory,
+  selectedOrder,
+  searchText,
+}: NewsGridProps) => {
+  const { data, error, isLoading } = useNews(
+    selectedCategory,
+    selectedOrder,
+    searchText,
+  );
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

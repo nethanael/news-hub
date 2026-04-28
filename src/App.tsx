@@ -9,6 +9,7 @@ import SortSelector from "./components/SortSelector";
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("top");
   const [selectedOrder, setSelectedOrder] = useState("Pubdateasc");
+  const [searchText, setSearchText] = useState<string | null>(null);
 
   return (
     <Grid
@@ -22,7 +23,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar onSearch={(searchText) => setSearchText(searchText)} />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
@@ -43,6 +44,7 @@ function App() {
         <NewsGrid
           selectedCategory={selectedCategory}
           selectedOrder={selectedOrder}
+          searchText={searchText}
         />
       </GridItem>
     </Grid>

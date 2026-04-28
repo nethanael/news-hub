@@ -9,6 +9,20 @@ export interface NewsArticle {
   link: string;
 }
 
-const useNews = (selectedCategory: string, selectedOrder: string) => useData<NewsArticle>("/latest", {params: {category: selectedCategory, sort: selectedOrder}}, [selectedCategory, selectedOrder]);
+const useNews = (
+  selectedCategory: string, 
+  selectedOrder: string, 
+  searchText: string | null
+  ) => 
+    useData<NewsArticle>("/latest", 
+       {
+      params: {
+        category: selectedCategory,
+        sort: selectedOrder,
+        ...(searchText ? { qInTitle: searchText } : {}),
+        },
+      },
+      [selectedCategory, selectedOrder, searchText]
+    );
 
 export default useNews;
