@@ -28,7 +28,7 @@ const ArticleCard = ({ newsArticle }: ArticleCardProps) => {
         </HStack>
         <Text fontSize="xs">
           <Link href={newsArticle.link} isExternal>
-            Leer más...
+            Ir a la noticia...
           </Link>
         </Text>
       </CardBody>
