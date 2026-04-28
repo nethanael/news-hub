@@ -1,3 +1,4 @@
+import { NewsQuery } from "../entities/NewsQuery";
 import useData from "./useData";
 
 export interface NewsArticle {
@@ -9,20 +10,16 @@ export interface NewsArticle {
   link: string;
 }
 
-const useNews = (
-  selectedCategory: string, 
-  selectedOrder: string, 
-  searchText: string | null
-  ) => 
+const useNews = (newsQuery: NewsQuery) => 
     useData<NewsArticle>("/latest", 
        {
       params: {
-        category: selectedCategory,
-        sort: selectedOrder,
-        ...(searchText ? { qInTitle: searchText } : {}),
+        category: newsQuery.category,
+        sort: newsQuery.sort,
+        ...(newsQuery.searchText ? { qInTitle: newsQuery.searchText } : {}),
         },
       },
-      [selectedCategory, selectedOrder, searchText]
+      [newsQuery]
     );
 
 export default useNews;

@@ -5,11 +5,14 @@ import SourcesList from "./components/SourcesList";
 import { useState } from "react";
 import CategorySelector from "./components/CategorySelector";
 import SortSelector from "./components/SortSelector";
+import { NewsQuery } from "./entities/NewsQuery";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("top");
-  const [selectedOrder, setSelectedOrder] = useState("Pubdateasc");
-  const [searchText, setSearchText] = useState<string | null>(null);
+  const [newsQuery, setNewsQuery] = useState<NewsQuery>({
+    category: "top",
+    sort: "Pubdateasc",
+    searchText: null,
+  });
 
   return (
     <Grid
@@ -23,7 +26,9 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar onSearch={(searchText) => setSearchText(searchText)} />
+        <NavBar
+          onSearch={(searchText) => setNewsQuery({ ...newsQuery, searchText })}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
@@ -33,19 +38,17 @@ function App() {
       <GridItem area="main">
         <HStack spacing={5} paddingLeft={3} marginBottom={3}>
           <CategorySelector
-            selectedCategory={selectedCategory}
-            onSelectCategory={(category) => setSelectedCategory(category)}
+            selectedCategory={newsQuery.category}
+            onSelectCategory={(category) =>
+              setNewsQuery({ ...newsQuery, category })
+            }
           />
           <SortSelector
-            selectedOrder={selectedOrder}
-            onSelectOrder={(order) => setSelectedOrder(order)}
+            selectedOrder={newsQuery.sort}
+            onSelectOrder={(sort) => setNewsQuery({ ...newsQuery, sort })}
           />
         </HStack>
-        <NewsGrid
-          selectedCategory={selectedCategory}
-          selectedOrder={selectedOrder}
-          searchText={searchText}
-        />
+        <NewsGrid newsQuery={newsQuery} />
       </GridItem>
     </Grid>
   );
