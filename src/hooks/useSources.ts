@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
-import apiClient from "../services/api-client";
-import { CanceledError } from "axios";
-import useData from "./useData";
+//import useData from "./useData";
+import sources from "../data/NewsSources";
 
 export interface Source {
     id: string;
@@ -10,6 +8,7 @@ export interface Source {
     icon: string;
 }
 
-const useSources = () => useData<Source>("/sources");
+// const useSources = () => useData<Source>("/sources");
+const useSources = () => ({data: sources, isLoading: false, error: null});
 
 export default useSources;

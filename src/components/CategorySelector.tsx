@@ -1,5 +1,5 @@
 import { Select } from "@chakra-ui/react";
-import categories from "../services/NewsCategories";
+import categories from "../data/NewsCategories";
 
 interface CategorySelectorProps {
   selectedCategory: string;
