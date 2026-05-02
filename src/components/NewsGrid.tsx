@@ -14,27 +14,26 @@ const NewsGrid = ({ newsQuery }: NewsGridProps) => {
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+  if (error) return <Text>{error}</Text>;
+
   return (
-    <>
-      {error && <Text>{error}</Text>}
-      <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={6}
-        padding="10px"
-      >
-        {isLoading &&
-          skeletons.map((skeleton) => (
-            <ArticleCardContainer key={skeleton}>
-              <ArticleCardSkeleton />
-            </ArticleCardContainer>
-          ))}
-        {data.map((article) => (
-          <ArticleCardContainer key={article.article_id}>
-            <ArticleCard newsArticle={article} />
+    <SimpleGrid
+      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+      spacing={6}
+      padding="10px"
+    >
+      {isLoading &&
+        skeletons.map((skeleton) => (
+          <ArticleCardContainer key={skeleton}>
+            <ArticleCardSkeleton />
           </ArticleCardContainer>
         ))}
-      </SimpleGrid>
-    </>
+      {data.map((article) => (
+        <ArticleCardContainer key={article.article_id}>
+          <ArticleCard newsArticle={article} />
+        </ArticleCardContainer>
+      ))}
+    </SimpleGrid>
   );
 };
 
