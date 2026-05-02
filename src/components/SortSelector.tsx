@@ -14,7 +14,7 @@ const SortSelector = ({ selectedOrder, onSelectOrder }: SortSelectorProps) => {
 
   return (
     <Select
-      placeholder="Ordenar por"
+      //placeholder="Ordenar por"
       value={selectedOrder}
       onChange={(event) => onSelectOrder(event.target.value)}
     >

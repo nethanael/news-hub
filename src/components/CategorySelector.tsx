@@ -12,7 +12,7 @@ const CategorySelector = ({
 }: CategorySelectorProps) => {
   return (
     <Select
-      placeholder="Seleccione categoría"
+      //placeholder="Seleccione categoría"
       value={selectedCategory}
       onChange={(event) => onSelectCategory(event.target.value)}
     >
