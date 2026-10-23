@@ -30,9 +30,9 @@ const SourcesList = () => {
                 src={source.icon}
                 objectFit="cover"
               ></Image>
-              <Text fontSize="lg" textAlign="left">
+              <a fontSize="lg" textAlign="left" href={source.url}>
                 {source.name}
-              </Text>
+              </a>
             </HStack>
           </ListItem>
         ))}
