@@ -28,11 +28,12 @@ const SourcesList = () => {
                 boxSize="32px"
                 borderRadius={8}
                 src={source.icon}
+                alt={`Logo de ${source.name}`}
                 objectFit="cover"
-              ></Image>
-              <a fontSize="lg" textAlign="left" href={source.url}>
-                {source.name}
-              </a>
+              />
+              <Text fontSize="lg" textAlign="left">
+                <a href={source.url}>{source.name}</a>
+              </Text>
             </HStack>
           </ListItem>
         ))}
