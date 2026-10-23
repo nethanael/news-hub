@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <title>Perezosito News Hub</title>
+  <path d="M9 23C12 16 19 12 25 12L23 5C29 5 34 9 36 12L41 8L42 15C51 18 58 29 59 41C61 54 48 60 32 60C16 60 3 54 5 41C5 34 6 28 9 23Z" fill="#7df3ff" stroke="#007481" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M9 40C10 28 19 21 27 25L32 29L37 25C45 21 54 28 55 40C58 51 46 56 32 56C18 56 6 51 9 40Z" fill="#d8ffff"/>
+  <path d="M12 35C15 28 23 28 26 33C29 39 23 46 16 46C10 46 9 41 12 35ZM52 35C49 28 41 28 38 33C35 39 41 46 48 46C54 46 55 41 52 35Z" fill="#007481"/>
+  <ellipse cx="20" cy="37" rx="4" ry="5" fill="#00191e"/>
+  <ellipse cx="44" cy="37" rx="4" ry="5" fill="#00191e"/>
+  <circle cx="21" cy="35" r="1.5" fill="#d8ffff"/>
+  <circle cx="43" cy="35" r="1.5" fill="#d8ffff"/>
+  <ellipse cx="32" cy="42" rx="4.5" ry="3" fill="#00474f"/>
+  <path d="M26 48Q32 54 38 48" stroke="#00474f" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
